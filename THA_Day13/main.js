@@ -1,17 +1,19 @@
 const joke1 = document.getElementById('joke');
 const get_joke = document.getElementById('get_joke');
 
-get_joke.addEventListener('click', ___);
+et_joke.addEventListener('click', generateJoke);
+generateJoke();
 
 async function generateJoke() {
     const jokeRes = await fetch('https://icanhazdadjoke.com/', {
         headers: {
-            Accept: "application/json"
+            'Accept': "application/json"
           }
         });
-        const jokeObj = await jokeData.json();
-        jokeDiv.innerHTML = jokeObj.joke;
-        console.log(jokeData);
+        const jokeObj = await jokeRes.json();
+        
+        console.log(jokeObj);
+        joke1.innerHTML = jokeObj.joke;
       }
       const touchButton = document.querySelector(".float-text");
       const card = document.querySelector(".float-card-info");
